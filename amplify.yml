@@ -1,0 +1,19 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        build:
+          commands:
+            - pip install -r requirements.txt
+            - pip install gunicorn
+      artifacts:
+        baseDirectory: /
+        files:
+          - '**/*'
+      buildSpec: |
+        version: 1
+        frontend:
+          phases:
+            build:
+              commands:
+                - gunicorn app:app

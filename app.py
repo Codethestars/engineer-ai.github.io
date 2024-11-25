@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
-# Tell Flask where to find the templates folder
-app = Flask(__name__, template_folder="../templates")
+# Point to templates in root folder
+app = Flask(__name__, template_folder="templates")
 
 @app.route("/")
 def home():
