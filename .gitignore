@@ -1,3 +1,9 @@
-.env 
-__pycache__/ 
-*.pyc 
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment variables file - keeps API keys private
+.env
