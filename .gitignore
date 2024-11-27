@@ -1,9 +1,4 @@
-# Python virtual environment
 venv/
-
-# Python cache files
+venvrag/
 __pycache__/
 *.pyc
-
-# Environment variables file - keeps API keys private
-.env
