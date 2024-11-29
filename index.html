@@ -19,6 +19,8 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .navbar {
@@ -65,13 +67,14 @@
         }
 
         .hero {
-            height: calc(100vh - 120px);
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 4rem 1rem 2rem;
+            padding: 4rem 1rem 1rem;
+            overflow-y: auto;
         }
 
         .hero h1 {
@@ -89,52 +92,37 @@
             color: #8bb5c9;
             margin-bottom: 2rem;
             font-family: Cambria, serif;
+            font-weight: normal;
         }
 
         .instruction-field {
             width: 100%;
             max-width: 960px;
             height: 120px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgb(240,255,255);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             padding: 1rem;
             margin: 1rem auto;
-            color: white;
+            color: black;
             font-size: 1rem;
             resize: none;
         }
 
         .instruction-field::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(0, 0, 0, 0.6);
         }
 
         .logos-container {
-            position: relative;
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
             margin-top: 1rem;
+            padding: 1rem;
         }
 
         .logos-row {
-            position: absolute;
             display: flex;
             gap: 2rem;
-            padding: 1rem;
-            animation: scroll 20s linear infinite;
-            opacity: 0.8;
-            white-space: nowrap;
-        }
-
-        .logos-row:nth-child(1) {
-            animation-direction: normal;
-            top: 0;
-        }
-
-        .logos-row:nth-child(2) {
-            top: 120px;
-            animation-direction: reverse;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .logo-item {
@@ -152,29 +140,9 @@
         .footer {
             text-align: center;
             padding: 0.6rem;
-            margin-top: auto;
             background-color: #f5d76e;
             color: brown;
             font-size: 0.9rem;
-        }
-
-        .bottom-logos-container {
-            position: relative;
-            width: 100%;
-            height: 120px;
-            overflow: hidden;
-            margin-top: 0;
-        }
-
-        .bottom-logos-row {
-            position: absolute;
-            display: flex;
-            gap: 2rem;
-            padding: 1rem;
-            animation: scroll 20s linear infinite reverse;
-            opacity: 0.8;
-            width: 100%;
-            white-space: nowrap;
         }
 
         .submit-button {
@@ -190,15 +158,6 @@
 
         .submit-button:hover {
             opacity: 0.9;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
         }
 
         @media screen and (max-width: 768px) {
@@ -224,10 +183,6 @@
                 padding: 0.4rem 0.6rem;
             }
 
-            .logos-container {
-                height: 180px;
-            }
-
             .logos-row {
                 gap: 1rem;
             }
@@ -236,10 +191,6 @@
                 min-width: 100px;
                 padding: 0.4rem 0.8rem;
                 font-size: 0.8rem;
-            }
-
-            .logos-row:nth-child(2) {
-                top: 90px;
             }
 
             .instruction-field {
@@ -307,61 +258,9 @@
                 <div class="logo-item">Photovoltaic</div>
                 <div class="logo-item">Healthcare</div>
                 <div class="logo-item">Fire Protection</div>
-                <div class="logo-item">HVAC</div>
-                <div class="logo-item">Plumbing</div>
-                <div class="logo-item">Electrical</div>
-                <div class="logo-item">Architecture</div>
-                <div class="logo-item">Energy</div>
-                <div class="logo-item">Fire Sprinkler</div>
-                <div class="logo-item">Photovoltaic</div>
-                <div class="logo-item">Healthcare</div>
-                <div class="logo-item">Fire Protection</div>
-            </div>
-            <div class="logos-row">
-                <div class="logo-item">Energy</div>
-                <div class="logo-item">Fire Sprinkler</div>
-                <div class="logo-item">Photovoltaic</div>
-                <div class="logo-item">Healthcare</div>
-                <div class="logo-item">Fire Protection</div>
-                <div class="logo-item">HVAC</div>
-                <div class="logo-item">Plumbing</div>
-                <div class="logo-item">Electrical</div>
-                <div class="logo-item">Architecture</div>
-                <div class="logo-item">Energy</div>
-                <div class="logo-item">Fire Sprinkler</div>
-                <div class="logo-item">Photovoltaic</div>
-                <div class="logo-item">Healthcare</div>
-                <div class="logo-item">Fire Protection</div>
-                <div class="logo-item">HVAC</div>
-                <div class="logo-item">Plumbing</div>
-                <div class="logo-item">Electrical</div>
-                <div class="logo-item">Architecture</div>
             </div>
         </div>
     </main>
-
-    <div class="bottom-logos-container">
-        <div class="bottom-logos-row">
-            <div class="logo-item">HVAC</div>
-            <div class="logo-item">Plumbing</div>
-            <div class="logo-item">Electrical</div>
-            <div class="logo-item">Architecture</div>
-            <div class="logo-item">Energy</div>
-            <div class="logo-item">Fire Sprinkler</div>
-            <div class="logo-item">Photovoltaic</div>
-            <div class="logo-item">Healthcare</div>
-            <div class="logo-item">Fire Protection</div>
-            <div class="logo-item">HVAC</div>
-            <div class="logo-item">Plumbing</div>
-            <div class="logo-item">Electrical</div>
-            <div class="logo-item">Architecture</div>
-            <div class="logo-item">Energy</div>
-            <div class="logo-item">Fire Sprinkler</div>
-            <div class="logo-item">Photovoltaic</div>
-            <div class="logo-item">Healthcare</div>
-            <div class="logo-item">Fire Protection</div>
-        </div>
-    </div>
 
     <footer class="footer">
         ©2024 engineer-ai.com
