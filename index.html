@@ -25,7 +25,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.6rem 2rem;
+            padding: 0.6rem 1rem;
             background-color: #f5d76e;
             position: fixed;
             width: 100%;
@@ -34,10 +34,16 @@
             color: brown;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
         .nav-links a {
             color: brown;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .nav-links a:not(.button):hover {
@@ -47,7 +53,7 @@
         .button {
             background-color: transparent;
             color: brown;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
@@ -65,12 +71,12 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 4rem 2rem 2rem;
+            padding: 4rem 1rem 2rem;
         }
 
         .hero h1 {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(45deg, #ffffff, #8bb5c9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -79,13 +85,15 @@
         }
 
         .hero h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #8bb5c9;
             margin-bottom: 2rem;
+            font-family: Cambria, serif;
         }
 
         .instruction-field {
-            width: 960px;
+            width: 100%;
+            max-width: 960px;
             height: 120px;
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -112,10 +120,11 @@
         .logos-row {
             position: absolute;
             display: flex;
-            gap: 4rem;
+            gap: 2rem;
             padding: 1rem;
             animation: scroll 20s linear infinite;
             opacity: 0.8;
+            white-space: nowrap;
         }
 
         .logos-row:nth-child(1) {
@@ -129,13 +138,15 @@
         }
 
         .logo-item {
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 1rem;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
-            color: #8bb5c9;
+            color: rgb(255,196,125);
             font-weight: 500;
-            min-width: 160px;
+            min-width: 120px;
             text-align: center;
+            font-size: 0.9rem;
+            display: inline-block;
         }
 
         .footer {
@@ -158,11 +169,12 @@
         .bottom-logos-row {
             position: absolute;
             display: flex;
-            gap: 4rem;
+            gap: 2rem;
             padding: 1rem;
             animation: scroll 20s linear infinite reverse;
             opacity: 0.8;
             width: 100%;
+            white-space: nowrap;
         }
 
         .submit-button {
@@ -188,6 +200,80 @@
                 transform: translateX(-100%);
             }
         }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 0.3rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .button {
+                padding: 0.4rem 0.6rem;
+            }
+
+            .logos-container {
+                height: 180px;
+            }
+
+            .logos-row {
+                gap: 1rem;
+            }
+
+            .logo-item {
+                min-width: 100px;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .logos-row:nth-child(2) {
+                top: 90px;
+            }
+
+            .instruction-field {
+                height: 100px;
+                font-size: 0.9rem;
+                margin: 0.5rem auto;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero h2 {
+                font-size: 1rem;
+            }
+
+            .navbar {
+                padding: 0.4rem 0.6rem;
+            }
+
+            .nav-links {
+                gap: 0.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.7rem;
+            }
+
+            .button {
+                padding: 0.3rem 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -195,7 +281,7 @@
         <a href="#" class="logo">
         </a>
         <div class="nav-links">
-            <a href="#">Pricing</a>
+            <a href="#" class="button">Pricing</a>
             <a href="#" class="button">Login</a>
             <a href="#" class="button">We're hiring!</a>
             <a href="contact.html" class="button">Contact Us</a>
@@ -204,11 +290,11 @@
 
     <main class="hero">
         <h1>Design and Manage MEP with RAG Featured A.I.</h1>
-        <h2>Powered by Anthropic</h2>
+        <h2>Powered by Anthropic (Work in Progress)</h2>
         
         <textarea class="instruction-field" placeholder="Enter Your Instructions or Questions Here"></textarea>
         <button class="submit-button">Submit</button>
-        <textarea class="instruction-field" placeholder="Answer"></textarea>
+        <textarea class="instruction-field" placeholder="A.I.'s Answer"></textarea>
 
         <div class="logos-container">
             <div class="logos-row">
@@ -221,8 +307,26 @@
                 <div class="logo-item">Photovoltaic</div>
                 <div class="logo-item">Healthcare</div>
                 <div class="logo-item">Fire Protection</div>
+                <div class="logo-item">HVAC</div>
+                <div class="logo-item">Plumbing</div>
+                <div class="logo-item">Electrical</div>
+                <div class="logo-item">Architecture</div>
+                <div class="logo-item">Energy</div>
+                <div class="logo-item">Fire Sprinkler</div>
+                <div class="logo-item">Photovoltaic</div>
+                <div class="logo-item">Healthcare</div>
+                <div class="logo-item">Fire Protection</div>
             </div>
             <div class="logos-row">
+                <div class="logo-item">Energy</div>
+                <div class="logo-item">Fire Sprinkler</div>
+                <div class="logo-item">Photovoltaic</div>
+                <div class="logo-item">Healthcare</div>
+                <div class="logo-item">Fire Protection</div>
+                <div class="logo-item">HVAC</div>
+                <div class="logo-item">Plumbing</div>
+                <div class="logo-item">Electrical</div>
+                <div class="logo-item">Architecture</div>
                 <div class="logo-item">Energy</div>
                 <div class="logo-item">Fire Sprinkler</div>
                 <div class="logo-item">Photovoltaic</div>
@@ -238,6 +342,15 @@
 
     <div class="bottom-logos-container">
         <div class="bottom-logos-row">
+            <div class="logo-item">HVAC</div>
+            <div class="logo-item">Plumbing</div>
+            <div class="logo-item">Electrical</div>
+            <div class="logo-item">Architecture</div>
+            <div class="logo-item">Energy</div>
+            <div class="logo-item">Fire Sprinkler</div>
+            <div class="logo-item">Photovoltaic</div>
+            <div class="logo-item">Healthcare</div>
+            <div class="logo-item">Fire Protection</div>
             <div class="logo-item">HVAC</div>
             <div class="logo-item">Plumbing</div>
             <div class="logo-item">Electrical</div>
